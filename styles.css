@@ -1,0 +1,211 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a3c2f;
+}
+
+/* Start Screen */
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    color: white;
+    background-color: #0d614b;
+    padding: 30px 40px;
+    border: 90px solid #0a3c2f ;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+}
+
+#start-screen h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+#start-screen p {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#mode-selector {
+    font-size: .8em;
+    letter-spacing: 0.1em;
+
+}
+
+#theme-selector {
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+}
+
+#start-screen button {
+    padding: 10px 15px;
+    color: #267c65;
+    background: white;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#start-screen button:hover {
+    color: white;
+    background-color: #267c65;
+}
+
+/* Game Screen */
+.hidden {
+    display: none; /* Hide inactive screens */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: #0d614b;
+    padding: 30px 40px;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.timer {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* BUTTON STYLES */
+.reset {
+    padding: 10px 15px;
+    color: #267c65;
+    background: white;
+    border: none;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.back {
+    padding: 10px 20px;
+    color: #267c65; 
+    background: white;
+    border: none;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+.reset:hover, .back:hover {
+    color: white;
+    background-color: #267c65;
+}
+
+
+.game {
+    width: 360px;
+    height: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    border-radius: 8px;
+    
+    
+}
+
+.item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    background-color: white;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #209d7b;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    border-radius: 4px;
+    
+}
+
+.boxOpen:after,
+.boxMatch:after {
+    transform: rotateY(180deg);
+}
+
+.item.boxMatch {
+    background-color: #90ee90;
+    cursor: not-allowed;
+}
+
+#scoreboard {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+#scoreboard p {
+    margin: 4px;
+    font-weight: bold;
+}

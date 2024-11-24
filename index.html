@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Memory Game</title>
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <h1>-- Memory Game --</h1>
+        <p>Choose Mode:<p> <!-- Choosing which player mode-->
+        <select id="mode-selector">
+            <option value="solo">Solo</option>
+            <option value="two-player">2-Player</option>
+        </select>
+        <p>Select a theme:</p> <!-- Choosing which player mode-->
+        <select id="theme-selector">
+            <option value="fruits">Fruits</option>
+            <option value="animals">Animals</option>
+            <option value="nature">Nature</option>
+        </select>
+        <button id="start-button">Start Game</button>
+    </div>
+
+    <!-- Game Container -->
+    <div class="container hidden" id="container-hidden">
+        <!-- <h2> -- Memory Game -- </h2>  -->
+        <div class="timer">Time: 0:00</div>
+        
+        <div id="scoreboard">
+            <p id="player1-score">Player 1: 0 points</p>
+            <p id="player2-score">Player 2: 0 points</p>
+            <p id="current-player">Current Turn: Player 1</p>
+        </div>
+        
+        <div class="game"></div>
+        <div id="btn">
+            <button id="reset" class="reset">Reset Game</button>
+            <button id="back-Btn" class="back">Start Menu</button>
+        </div>
+    </div>
+</body>
+</html>
